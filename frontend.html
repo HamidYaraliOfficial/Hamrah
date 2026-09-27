@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>همراه | با هم، هر مسیر آسان‌تر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Estedad:wght@100..900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a12;--surface:#12121c;--elev:#1a1a28;--card:#1e1e2e;--hover:#262638;--input:#16161f;
+  --text:#f5f5fa;--text2:#b8b8c8;--muted:#787890;
+  --accent:#ff7a45;--accent-soft:#ff9d6b;--accent-deep:#e85d2a;
+  --accent-glow:rgba(255,122,69,.28);--accent-tint:rgba(255,122,69,.1);
+  --mint:#4ade80;--sky:#60a5fa;--rose:#fb7185;--amber:#fbbf24;
+  --border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.1);--border3:rgba(255,255,255,.16);
+  --sh-sm:0 2px 8px rgba(0,0,0,.25);--sh-md:0 8px 24px rgba(0,0,0,.35);--sh-lg:0 20px 48px rgba(0,0,0,.45);
+  --r-xs:8px;--r-sm:12px;--r-md:18px;--r-lg:26px;--r-xl:36px;--pill:999px;
+  --fb:'Vazirmatn',system-ui,sans-serif;--fd:'Estedad','Vazirmatn',system-ui;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+body.light{
+  --bg:#faf8f5;--surface:#fff;--elev:#f5f2ee;--card:#fff;--hover:#f8f5f1;--input:#f5f2ee;
+  --text:#1a1a24;--text2:#555568;--muted:#8a8a9a;
+  --border:rgba(0,0,0,.05);--border2:rgba(0,0,0,.08);--border3:rgba(0,0,0,.14);
+  --sh-sm:0 2px 8px rgba(120,90,60,.08);--sh-md:0 8px 24px rgba(120,90,60,.1);--sh-lg:0 20px 48px rgba(120,90,60,.14);
+}
+body.ocean{--accent:#2dd4bf;--accent-soft:#5eead4;--accent-deep:#14b8a6;--accent-glow:rgba(45,212,191,.3);--accent-tint:rgba(45,212,191,.1);--bg:#08191c;--surface:#0f2a2e;--card:#123238;--elev:#163c42}
+body.royal{--accent:#c084fc;--accent-soft:#d8b4fe;--accent-deep:#a855f7;--accent-glow:rgba(192,132,252,.3);--accent-tint:rgba(192,132,252,.1);--bg:#150826;--surface:#21103a;--card:#251545;--elev:#2d1a4e}
+body.sunset{--accent:#fb923c;--accent-soft:#fdba74;--accent-deep:#ea580c;--accent-glow:rgba(251,146,60,.3);--accent-tint:rgba(251,146,60,.1);--bg:#1c0e08;--surface:#2a1710;--card:#301a11;--elev:#3a221a}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:15px;line-height:1.75;min-height:100vh;overflow-x:hidden;transition:background .4s var(--ease),color .3s}
+body[dir=ltr]{font-family:'Estedad',system-ui,sans-serif}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border3);border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+::selection{background:var(--accent);color:#fff}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:800;letter-spacing:-.02em;line-height:1.3}
+.hidden{display:none!important}.flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}
+.justify-between{justify-content:space-between}.justify-center{justify-content:center}
+.gap-2{gap:8px}.gap-3{gap:12px}.gap-4{gap:16px}.text-center{text-align:center}.w-full{width:100%}
+.flex-wrap{flex-wrap:wrap}.flex-1{flex:1}
+
+/* Header */
+.header{position:fixed;top:0;right:0;left:0;z-index:1000;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1440px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;cursor:pointer;user-select:none}
+.logo-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 20px var(--accent-glow);position:relative;overflow:hidden}
+.logo-mark::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 60%);border-radius:inherit}
+.logo-text{font-family:var(--fd);font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--text) 20%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.logo-sub{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:.5px;margin-top:2px}
+.nav{display:flex;align-items:center;gap:4px}
+.nav-btn{background:transparent;border:none;color:var(--text2);font-family:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:var(--pill);cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .3s var(--ease);position:relative;white-space:nowrap}
+.nav-btn:hover{background:var(--hover);color:var(--text);transform:translateY(-1px)}
+.nav-btn.active{background:var(--accent-tint);color:var(--accent)}
+.nav-btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;box-shadow:0 4px 14px var(--accent-glow)}
+.nav-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px var(--accent-glow)}
+.nav-icon{font-size:16px;line-height:1}
+.switchers{display:flex;align-items:center;gap:10px}
+.theme-switcher{display:flex;gap:5px;background:var(--elev);padding:4px;border-radius:var(--pill);border:1px solid var(--border)}
+.theme-dot{width:22px;height:22px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .3s var(--ease)}
+.theme-dot:hover{transform:scale(1.18)}
+.theme-dot.active{border-color:var(--text);transform:scale(1.1);box-shadow:0 0 0 2px var(--elev),0 0 12px rgba(255,255,255,.25)}
+.theme-dot[data-theme=dark]{background:linear-gradient(135deg,#1e1e2e,#0a0a12)}
+.theme-dot[data-theme=light]{background:linear-gradient(135deg,#fff,#faf8f5)}
+.theme-dot[data-theme=ocean]{background:linear-gradient(135deg,#2dd4bf,#0f766e)}
+.theme-dot[data-theme=royal]{background:linear-gradient(135deg,#c084fc,#7c3aed)}
+.theme-dot[data-theme=sunset]{background:linear-gradient(135deg,#fb923c,#ea580c)}
+.lang-switcher{display:flex;background:var(--elev);border-radius:var(--pill);padding:4px;border:1px solid var(--border)}
+.lang-btn{background:transparent;border:none;color:var(--text2);padding:5px 12px;border-radius:var(--pill);cursor:pointer;font-family:inherit;font-weight:700;font-size:12px;transition:all .3s}
+.lang-btn.active{background:var(--accent);color:#fff;box-shadow:0 2px 8px var(--accent-glow)}
+.mobile-menu-btn{display:none;background:transparent;border:none;color:var(--text);font-size:22px;cursor:pointer;padding:8px;border-radius:var(--r-sm)}
+.mobile-menu{display:none;position:fixed;top:66px;right:0;left:0;bottom:0;background:var(--surface);z-index:999;padding:20px;overflow-y:auto;border-top:1px solid var(--border)}
+.mobile-menu.open{display:flex;flex-direction:column;gap:6px}
+.mobile-menu .nav-btn{justify-content:flex-start;padding:14px 18px;font-size:15px;border-radius:var(--r-md)}
+
+/* App */
+.app{padding-top:78px;min-height:100vh}
+.page{display:none;animation:fade .5s var(--ease)}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.container{max-width:1280px;margin:0 auto;padding:0 24px 40px}
+.container-narrow{max-width:720px}
+
+/* Hero */
+.hero{position:relative;border-radius:var(--r-xl);overflow:hidden;margin:24px auto 40px;padding:64px 56px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 8%,var(--surface)),var(--surface) 55%,color-mix(in srgb,#a78bfa 6%,var(--surface)));border:1px solid var(--border);min-height:400px;display:flex;align-items:center;box-shadow:var(--sh-md)}
+.hero::before{content:'';position:absolute;top:-40%;right:-15%;width:720px;height:720px;background:radial-gradient(circle,var(--accent-glow),transparent 62%);pointer-events:none;animation:float 12s ease-in-out infinite}
+@keyframes float{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.15) translate(-18px,14px)}}
+.hero-content{position:relative;z-index:1;max-width:640px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-tint);color:var(--accent);padding:8px 18px;border-radius:var(--pill);font-size:13px;font-weight:700;margin-bottom:22px;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}50%{box-shadow:0 0 0 8px transparent}}
+.hero h1{font-size:clamp(32px,4.5vw,56px);line-height:1.15;margin-bottom:20px;background:linear-gradient(135deg,var(--text) 30%,var(--accent-soft) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
+.hero p{color:var(--text2);font-size:17px;line-height:1.85;margin-bottom:32px;max-width:540px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Buttons */
+.btn{font-family:inherit;font-size:14.5px;font-weight:700;padding:13px 28px;border-radius:var(--pill);border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:all .3s var(--ease);white-space:nowrap;text-decoration:none}
+.btn-accent{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;box-shadow:0 6px 20px var(--accent-glow)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 12px 32px var(--accent-glow)}
+.btn-ghost{background:var(--elev);color:var(--text);border:1px solid var(--border2)}
+.btn-ghost:hover{background:var(--hover);border-color:var(--accent);transform:translateY(-2px)}
+.btn-sm{padding:9px 18px;font-size:13px}
+.btn-lg{padding:16px 34px;font-size:16px}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-bottom:48px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 20px;text-align:center;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.stat-card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:var(--sh-md)}
+.stat-icon{font-size:28px;margin-bottom:10px;display:block}
+.stat-num{font-family:var(--fd);font-size:32px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:6px}
+.stat-lbl{font-size:13px;color:var(--text2);font-weight:500}
+
+/* Section head */
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.section-title{font-size:24px;font-weight:800;display:flex;align-items:center;gap:14px}
+.section-title::before{content:'';width:5px;height:30px;background:linear-gradient(180deg,var(--accent),var(--accent-deep));border-radius:4px}
+.section-sub{font-size:13px;color:var(--muted);margin-top:4px;font-weight:500}
+
+/* Filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;padding:4px 0}
+.filter-chip{background:var(--card);border:1px solid var(--border);color:var(--text2);font-family:inherit;padding:9px 20px;border-radius:var(--pill);cursor:pointer;font-size:13px;font-weight:600;transition:all .3s var(--ease);white-space:nowrap}
+.filter-chip:hover{border-color:var(--accent);color:var(--text);transform:translateY(-1px)}
+.filter-chip.active{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;border-color:transparent;box-shadow:0 4px 14px var(--accent-glow)}
+
+/* Cards grid */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px}
+.req-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:all .3s var(--ease);position:relative;display:flex;flex-direction:column}
+.req-card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:var(--sh-lg)}
+.req-cover{height:130px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 22%,var(--elev)),color-mix(in srgb,#a78bfa 16%,var(--elev)));display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;overflow:hidden}
+.req-cover::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,var(--card))}
+.req-badge{position:absolute;top:12px;right:12px;padding:5px 13px;border-radius:var(--pill);font-size:11px;font-weight:800;z-index:2;backdrop-filter:blur(8px)}
+.req-badge.urgent{background:rgba(239,68,68,.95);color:#fff;box-shadow:0 4px 12px rgba(239,68,68,.4);animation:urgP 1.8s ease-in-out infinite}
+@keyframes urgP{0%,100%{box-shadow:0 4px 12px rgba(239,68,68,.4)}50%{box-shadow:0 4px 20px rgba(239,68,68,.7)}}
+.req-badge.cat{background:rgba(0,0,0,.5);color:#fff;border:1px solid rgba(255,255,255,.15);left:12px;right:auto}
+.req-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.req-title{font-family:var(--fd);font-size:17px;font-weight:700;margin-bottom:12px;line-height:1.5}
+.req-meta{display:flex;flex-wrap:wrap;gap:10px 14px;margin-bottom:14px;font-size:12.5px;color:var(--text2)}
+.req-meta .meta-item{display:flex;align-items:center;gap:5px;background:var(--elev);padding:4px 10px;border-radius:var(--pill)}
+.req-desc{color:var(--text2);font-size:13.5px;line-height:1.75;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.req-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);gap:12px}
+.req-price{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--accent)}
+.req-price.free{color:var(--mint)}
+.req-user{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text2);font-weight:500}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;flex-shrink:0;box-shadow:0 3px 10px var(--accent-glow);position:relative}
+.avatar.online::after{content:'';position:absolute;bottom:0;left:0;width:10px;height:10px;background:var(--mint);border:2px solid var(--card);border-radius:50%}
+
+/* Steps */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.step-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.step-card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:var(--sh-md)}
+.step-num{position:absolute;top:12px;left:20px;font-family:var(--fd);font-size:60px;font-weight:900;color:var(--accent-tint);line-height:1;pointer-events:none}
+.step-icon{width:56px;height:56px;border-radius:var(--r-md);background:var(--accent-tint);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px;position:relative;z-index:1}
+.step-title{font-family:var(--fd);font-size:17px;font-weight:700;margin-bottom:8px;position:relative;z-index:1}
+.step-desc{font-size:13.5px;color:var(--text2);line-height:1.75;position:relative;z-index:1}
+
+/* Cats */
+.cats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:40px}
+.cat-tile{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px 16px;text-align:center;cursor:pointer;transition:all .3s var(--ease)}
+.cat-tile:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--sh-md)}
+.cat-tile:hover .cat-emoji{transform:scale(1.15) rotate(-5deg)}
+.cat-emoji{font-size:36px;margin-bottom:10px;display:block;transition:all .3s}
+.cat-name{font-family:var(--fd);font-weight:700;font-size:14px}
+.cat-count{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* Form */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px;box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.form-card::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,var(--accent-tint),transparent 65%);pointer-events:none}
+.form-group{margin-bottom:20px;position:relative;z-index:1}
+.form-label{display:block;margin-bottom:9px;font-weight:700;font-size:13.5px;color:var(--text)}
+.form-label .req{color:var(--rose)}
+.form-input,.form-select,.form-textarea{width:100%;padding:13px 18px;background:var(--input);border:1.5px solid var(--border2);border-radius:var(--r-md);color:var(--text);font-family:inherit;font-size:14.5px;outline:none;transition:all .3s var(--ease)}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--muted)}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-tint);background:var(--elev)}
+.form-textarea{resize:vertical;min-height:110px;line-height:1.7}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-hint{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6}
+.checkbox-group{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;user-select:none}
+.checkbox-group input[type=checkbox]{width:20px;height:20px;accent-color:var(--accent);cursor:pointer}
+
+/* Profile */
+.profile-hero{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,var(--card)),var(--card) 60%,color-mix(in srgb,#a78bfa 8%,var(--card)));border:1px solid var(--border);border-radius:var(--r-xl);padding:32px;margin-bottom:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}
+.profile-hero::before{content:'';position:absolute;top:-60%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,var(--accent-glow),transparent 65%);pointer-events:none}
+.profile-avatar-lg{width:90px;height:90px;border-radius:28px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--fd);font-size:38px;font-weight:900;flex-shrink:0;box-shadow:0 10px 30px var(--accent-glow);position:relative;z-index:1}
+.profile-info{flex:1;min-width:200px;position:relative;z-index:1}
+.profile-name{font-family:var(--fd);font-size:24px;font-weight:800;margin-bottom:4px}
+.profile-email{color:var(--text2);font-size:14px}
+.profile-badge-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.profile-badge{background:var(--accent-tint);color:var(--accent);padding:5px 12px;border-radius:var(--pill);font-size:11.5px;font-weight:700;border:1px solid color-mix(in srgb,var(--accent) 20%,transparent)}
+.profile-stats-row{display:flex;gap:24px;position:relative;z-index:1;flex-wrap:wrap}
+.pstat{text-align:center;padding:0 8px}
+.pstat-num{font-family:var(--fd);font-size:24px;font-weight:900;color:var(--accent);line-height:1}
+.pstat-lbl{font-size:11.5px;color:var(--muted);margin-top:6px;font-weight:600}
+
+/* Tabs */
+.tabs{display:flex;gap:6px;background:var(--elev);padding:5px;border-radius:var(--pill);border:1px solid var(--border);margin-bottom:24px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:10px 22px;border-radius:var(--pill);background:transparent;border:none;color:var(--text2);font-family:inherit;font-weight:700;font-size:13.5px;cursor:pointer;transition:all .3s;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.tab:hover:not(.active){background:var(--hover);color:var(--text)}
+.tab.active{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;box-shadow:0 4px 12px var(--accent-glow)}
+.tab-panel{display:none;animation:fade .35s var(--ease)}
+.tab-panel.active{display:block}
+
+/* List */
+.list-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px;margin-bottom:12px;display:flex;align-items:center;gap:16px;transition:all .3s var(--ease);flex-wrap:wrap}
+.list-item:hover{border-color:var(--accent);background:var(--hover);transform:translateX(-4px)}
+.list-ico{width:52px;height:52px;border-radius:var(--r-md);background:var(--elev);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.list-content{flex:1;min-width:200px}
+.list-title{font-family:var(--fd);font-weight:700;font-size:15.5px;margin-bottom:6px}
+.list-meta{font-size:12.5px;color:var(--text2);display:flex;gap:12px;flex-wrap:wrap}
+.list-meta .meta-item{display:flex;align-items:center;gap:4px;background:var(--elev);padding:3px 10px;border-radius:var(--pill)}
+.list-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.status-pill{padding:5px 13px;border-radius:var(--pill);font-size:11.5px;font-weight:800;display:inline-flex;align-items:center;gap:5px}
+.status-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
+.st-active{background:rgba(74,222,128,.12);color:var(--mint)}
+.st-pending{background:rgba(251,191,36,.12);color:var(--amber)}
+.st-matched{background:rgba(96,165,250,.12);color:var(--sky)}
+.st-rejected{background:rgba(251,113,133,.12);color:var(--rose)}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(10px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);max-width:600px;width:100%;max-height:92vh;overflow-y:auto;animation:modalIn .35s var(--ease);box-shadow:var(--sh-lg)}
+@keyframes modalIn{from{opacity:0;transform:scale(.94) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-head{padding:22px 26px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--surface);z-index:2;border-radius:var(--r-xl) var(--r-xl) 0 0}
+.modal-title{font-family:var(--fd);font-size:18px;font-weight:800}
+.modal-close{background:var(--elev);border:none;color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;transition:all .3s;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--rose);color:#fff;transform:rotate(90deg)}
+.modal-body{padding:26px}
+.modal-foot{padding:18px 26px;border-top:1px solid var(--border);display:flex;gap:10px;justify-content:flex-end;position:sticky;bottom:0;background:var(--surface);border-radius:0 0 var(--r-xl) var(--r-xl)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.info-box{background:var(--elev);padding:14px;border-radius:var(--r-md);border:1px solid var(--border)}
+.info-box .lbl{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:5px}
+.info-box .val{font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:6px}
+
+/* Empty */
+.empty{text-align:center;padding:60px 24px}
+.empty-ico{font-size:56px;margin-bottom:16px;opacity:.55;display:block}
+.empty-title{font-family:var(--fd);font-size:17px;font-weight:700;margin-bottom:6px;color:var(--text2)}
+.empty-desc{font-size:13.5px;color:var(--muted)}
+
+/* Toast */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--elev);border:1px solid var(--accent);color:var(--text);padding:14px 24px;border-radius:var(--pill);box-shadow:var(--sh-lg),0 0 24px var(--accent-glow);z-index:3000;transition:transform .45s var(--ease);display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;max-width:90vw}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* Bottom nav */
+.bottom-nav{display:none;position:fixed;bottom:0;right:0;left:0;background:color-mix(in srgb,var(--surface) 95%,transparent);backdrop-filter:blur(24px) saturate(140%);border-top:1px solid var(--border);z-index:1000;padding:6px 0 max(6px,env(safe-area-inset-bottom))}
+.bottom-nav-inner{display:flex;justify-content:space-around;align-items:center;max-width:500px;margin:0 auto}
+.bottom-item{display:flex;flex-direction:column;align-items:center;gap:2px;background:transparent;border:none;color:var(--muted);cursor:pointer;padding:6px 14px;border-radius:14px;transition:all .3s;font-family:inherit;font-size:10.5px;font-weight:700;min-width:60px;position:relative}
+.bottom-item .ico{font-size:20px;transition:all .3s}
+.bottom-item.active{color:var(--accent)}
+.bottom-item.active .ico{transform:translateY(-2px) scale(1.15);filter:drop-shadow(0 3px 8px var(--accent-glow))}
+.bottom-item.active::before{content:'';position:absolute;top:-6px;width:24px;height:3px;border-radius:3px;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+
+/* Chat */
+.chat-container{display:flex;flex-direction:column;height:calc(100vh - 220px);background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-md)}
+.chat-header{padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--elev)}
+.chat-header .avatar{width:44px;height:44px;font-size:16px}
+.chat-header .name{font-family:var(--fd);font-weight:700;font-size:15px}
+.chat-header .status{font-size:11.5px;color:var(--mint);display:flex;align-items:center;gap:5px}
+.chat-header .status::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint)}
+.chat-messages{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:12px;background:radial-gradient(circle at 20% 10%,var(--accent-tint),transparent 45%)}
+.chat-msg{max-width:76%;padding:11px 16px;border-radius:20px;font-size:14px;line-height:1.7;animation:msgIn .35s var(--ease);word-wrap:break-word}
+@keyframes msgIn{from{opacity:0;transform:translateY(10px) scale(.95)}to{opacity:1;transform:none}}
+.chat-msg.sent{align-self:flex-start;background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;border-bottom-right-radius:6px;box-shadow:0 4px 12px var(--accent-glow)}
+.chat-msg.received{align-self:flex-end;background:var(--elev);color:var(--text);border-bottom-left-radius:6px;border:1px solid var(--border)}
+.chat-msg .time{font-size:10px;opacity:.65;margin-top:4px;display:block;text-align:left}
+.chat-input-row{display:flex;gap:10px;padding:14px;border-top:1px solid var(--border);background:var(--elev);align-items:center}
+.chat-input-row input{flex:1;padding:12px 18px;background:var(--input);border:1.5px solid var(--border2);border-radius:var(--pill);color:var(--text);font-family:inherit;font-size:14px;outline:none}
+.chat-input-row input:focus{border-color:var(--accent)}
+.chat-input-row .btn{padding:12px 16px;border-radius:50%}
+
+/* Auth */
+.auth-wrap{min-height:calc(100vh - 78px);display:flex;align-items:center;justify-content:center;padding:32px 20px;background:radial-gradient(circle at 15% 20%,var(--accent-tint),transparent 40%),radial-gradient(circle at 85% 80%,rgba(167,139,250,.08),transparent 40%)}
+.auth-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:44px 40px;max-width:460px;width:100%;box-shadow:var(--sh-lg);position:relative;overflow:hidden}
+.auth-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,var(--accent-glow),transparent 70%);pointer-events:none}
+.auth-logo{width:70px;height:70px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 22px;box-shadow:0 10px 28px var(--accent-glow);position:relative;z-index:1}
+.auth-title{font-family:var(--fd);font-size:24px;font-weight:900;text-align:center;margin-bottom:8px;position:relative;z-index:1}
+.auth-sub{text-align:center;color:var(--text2);font-size:14px;margin-bottom:32px;position:relative;z-index:1}
+.auth-switch{text-align:center;margin-top:24px;font-size:13.5px;color:var(--text2);position:relative;z-index:1}
+.auth-switch button{background:none;border:none;color:var(--accent);font-family:inherit;font-weight:800;cursor:pointer;font-size:13.5px;margin-right:4px;text-decoration:underline;text-underline-offset:3px}
+
+/* Quote */
+.quote-block{background:linear-gradient(135deg,var(--accent-tint),rgba(167,139,250,.08));border:1px solid var(--border);border-radius:var(--r-xl);padding:32px;margin:40px 0;text-align:center;position:relative;overflow:hidden}
+.quote-block::before{content:'"';position:absolute;top:10px;right:24px;font-family:'Lalezar',serif;font-size:100px;color:var(--accent);opacity:.15;line-height:1}
+.quote-text{font-family:var(--fd);font-size:20px;font-weight:600;line-height:1.8;margin-bottom:12px}
+.quote-author{font-size:13px;color:var(--muted);font-weight:600}
+
+/* Timeline */
+.timeline{position:relative;padding-right:30px}
+.timeline::before{content:'';position:absolute;right:10px;top:6px;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),transparent)}
+.tl-item{position:relative;padding-bottom:28px;padding-right:30px}
+.tl-dot{position:absolute;right:-30px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--card);border:3px solid var(--border3)}
+.tl-dot.done{border-color:var(--mint);background:rgba(74,222,128,.12)}
+.tl-dot.active{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 6px var(--accent-tint),0 0 20px var(--accent-glow);animation:pulse 2s infinite}
+.tl-time{font-size:11.5px;color:var(--muted);margin-bottom:4px;font-weight:600}
+.tl-title{font-family:var(--fd);font-weight:700;font-size:14.5px}
+.tl-desc{font-size:12.5px;color:var(--text2);margin-top:4px}
+
+/* Search */
+.search-bar{display:flex;align-items:center;gap:10px;background:var(--card);border:1.5px solid var(--border2);border-radius:var(--pill);padding:10px 20px;flex:1;max-width:460px;transition:all .3s}
+.search-bar:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-tint)}
+.search-bar input{background:transparent;border:none;color:var(--text);outline:none;flex:1;font-family:inherit;font-size:14px}
+.search-bar input::placeholder{color:var(--muted)}
+.notif-dot{position:absolute;top:6px;left:10px;width:8px;height:8px;background:var(--rose);border-radius:50%;box-shadow:0 0 8px var(--rose);animation:pulse 2s infinite}
+
+@media(max-width:1024px){.hero{padding:48px 40px;min-height:360px}.cards-grid{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}}
+@media(max-width:768px){
+  .header-inner{padding:10px 16px}.nav{display:none}.theme-switcher{display:none}.mobile-menu-btn{display:block}
+  .bottom-nav{display:block}.app{padding-top:68px;padding-bottom:84px}.container{padding:0 16px 32px}
+  .hero{padding:32px 24px;min-height:280px;margin:12px 0 28px;border-radius:var(--r-lg)}.hero h1{font-size:28px}.hero p{font-size:15px}
+  .hero-actions .btn{flex:1;justify-content:center}.cards-grid{grid-template-columns:1fr;gap:16px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px}.form-row{grid-template-columns:1fr}
+  .form-card,.auth-card{padding:28px 22px}.profile-hero{padding:24px;gap:18px}
+  .profile-avatar-lg{width:72px;height:72px;font-size:30px;border-radius:22px}.profile-stats-row{gap:16px;justify-content:space-around;width:100%}
+  .info-grid{grid-template-columns:1fr}.modal{max-height:96vh;border-radius:var(--r-lg)}
+  .modal-head,.modal-body,.modal-foot{padding:20px}.chat-container{height:calc(100vh - 200px);border-radius:var(--r-lg)}
+  .quote-block{padding:24px}.quote-text{font-size:17px}.section-title{font-size:20px}.section-title::before{height:24px;width:4px}
+  .step-num{font-size:48px}.mobile-menu{top:62px}
+}
+@media(max-width:480px){
+  .hero{padding:26px 20px}.hero h1{font-size:22px}.hero-badge{font-size:11.5px;padding:6px 14px}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:10px}.stat-card{padding:16px 12px}.stat-num{font-size:22px}
+  .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:8px;margin:0 -16px 20px;padding-left:16px;padding-right:16px}
+  .list-item{flex-direction:column;align-items:flex-start;padding:16px}.list-actions{width:100%}
+  .list-actions .btn{flex:1;justify-content:center}.auth-card{padding:28px 20px}
+  .auth-logo{width:60px;height:60px;font-size:28px}.auth-title{font-size:20px}
+  .tab{padding:9px 16px;font-size:12.5px}.cats-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cat-tile{padding:18px 12px}.cat-emoji{font-size:30px}
+}
+</style>
+</head>
+<body class="theme-dark">
+
+<!-- API Base (auto-detect) -->
+<script>
+  window.API_BASE = (location.protocol.startsWith('http') && location.port === '8000')
+    ? ''
+    : 'http://localhost:8000';
+</script>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo" onclick="go('home')">
+      <div class="logo-mark">🤝</div>
+      <div>
+        <div class="logo-text" data-i18n="logo">همراه</div>
+        <div class="logo-sub" data-i18n="logo_sub">با هم، هر مسیر آسان‌تر</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <button class="nav-btn active" data-page="home" onclick="go('home')"><span class="nav-icon">🏠</span><span data-i18n="nav_home">خانه</span></button>
+      <button class="nav-btn" data-page="explore" onclick="go('explore')"><span class="nav-icon">🔍</span><span data-i18n="nav_explore">کاوش</span></button>
+      <button class="nav-btn" data-page="create" onclick="go('create')"><span class="nav-icon">✨</span><span data-i18n="nav_create">درخواست جدید</span></button>
+      <button class="nav-btn" data-page="dashboard" onclick="go('dashboard')"><span class="nav-icon">📊</span><span data-i18n="nav_dashboard">داشبورد</span></button>
+      <button class="nav-btn" data-page="chat" onclick="go('chat')"><span class="nav-icon">💬</span><span data-i18n="nav_chat">پیام‌ها</span><span class="notif-dot hidden" id="notifDot"></span></button>
+    </nav>
+    <div class="switchers">
+      <div class="theme-switcher">
+        <div class="theme-dot active" data-theme="dark" onclick="setTheme('dark')" title="شب"></div>
+        <div class="theme-dot" data-theme="light" onclick="setTheme('light')" title="روز"></div>
+        <div class="theme-dot" data-theme="ocean" onclick="setTheme('ocean')" title="اقیانوس"></div>
+        <div class="theme-dot" data-theme="royal" onclick="setTheme('royal')" title="سلطنتی"></div>
+        <div class="theme-dot" data-theme="sunset" onclick="setTheme('sunset')" title="غروب"></div>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fa" onclick="setLang('fa')">فا</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="nav-btn" id="loginBtn" onclick="go('login')" data-i18n="nav_login">ورود</button>
+      <button class="nav-btn primary" id="signupBtn" onclick="go('signup')" data-i18n="nav_signup">ثبت‌نام</button>
+      <div id="userMenu" class="hidden flex items-center gap-2">
+        <div class="avatar online" id="headerAvatar" onclick="go('dashboard')" style="cursor:pointer;">ک</div>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="nav-btn active" data-page="home" onclick="go('home')"><span class="nav-icon">🏠</span><span data-i18n="nav_home">خانه</span></button>
+  <button class="nav-btn" data-page="explore" onclick="go('explore')"><span class="nav-icon">🔍</span><span data-i18n="nav_explore">کاوش</span></button>
+  <button class="nav-btn" data-page="create" onclick="go('create')"><span class="nav-icon">✨</span><span data-i18n="nav_create">درخواست جدید</span></button>
+  <button class="nav-btn" data-page="dashboard" onclick="go('dashboard')"><span class="nav-icon">📊</span><span data-i18n="nav_dashboard">داشبورد</span></button>
+  <button class="nav-btn" data-page="chat" onclick="go('chat')"><span class="nav-icon">💬</span><span data-i18n="nav_chat">پیام‌ها</span></button>
+  <div style="height:1px;background:var(--border);margin:12px 0;"></div>
+  <button class="nav-btn" id="loginBtnM" onclick="go('login')"><span class="nav-icon">🔑</span><span data-i18n="nav_login">ورود</span></button>
+  <button class="nav-btn primary" id="signupBtnM" onclick="go('signup')"><span class="nav-icon">✨</span><span data-i18n="nav_signup">ثبت‌نام</span></button>
+  <button class="nav-btn hidden" id="logoutBtnM" onclick="logout()"><span class="nav-icon">🚪</span><span data-i18n="nav_logout">خروج</span></button>
+</div>
+
+<div class="app">
+
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">پلتفرم همراهی هوشمند و امن</span></div>
+          <h1 data-i18n="hero_title">با هم، هر مسیر آسان‌تر است</h1>
+          <p data-i18n="hero_desc">کسی رو پیدا کن که برای کارهای اداری، سینما، تئاتر، خرید و هر برنامه‌ای کنارت باشه. یا خودت پیشنهاد بده و هم درآمد داشته باش هم دوستای تازه پیدا کن.</p>
+          <div class="hero-actions">
+            <button class="btn btn-accent btn-lg" onclick="go('create')"><span>✨</span><span data-i18n="hero_cta1">درخواست همراهی</span></button>
+            <button class="btn btn-ghost btn-lg" onclick="go('explore')"><span>🔍</span><span data-i18n="hero_cta2">گشتن درخواست‌ها</span></button>
+          </div>
+        </div>
+      </section>
+      <section class="stats-grid" id="homeStats"></section>
+      <section style="margin-bottom:40px;">
+        <div class="section-head"><div><h2 class="section-title" data-i18n="cats_title">دسته‌بندی‌های محبوب</h2><p class="section-sub" data-i18n="cats_sub">انتخاب کن چه نوع همراهی می‌خوای</p></div></div>
+        <div class="cats-grid" id="catsGrid"></div>
+      </section>
+      <section>
+        <div class="section-head"><div><h2 class="section-title" data-i18n="featured_title">درخواست‌های ویژه</h2><p class="section-sub" data-i18n="featured_sub">تازه‌ترین و داغ‌ترین‌ها</p></div><button class="btn btn-ghost btn-sm" onclick="go('explore')" data-i18n="view_all">مشاهده همه ←</button></div>
+        <div class="cards-grid" id="featuredCards"></div>
+      </section>
+      <section class="quote-block"><div class="quote-text" data-i18n="quote_text">«تنها رفتن سریع‌تره، با هم رفتن دورتره.»</div><div class="quote-author" data-i18n="quote_author">— ضرب‌المثل آفریقایی</div></section>
+      <section>
+        <div class="section-head"><div><h2 class="section-title" data-i18n="how_title">چطور کار می‌کند؟</h2><p class="section-sub" data-i18n="how_sub">فقط ۴ قدم ساده تا تجربه‌ای امن و لذت‌بخش</p></div></div>
+        <div class="steps-grid">
+          <div class="step-card"><div class="step-num">۱</div><div class="step-icon">📝</div><h3 class="step-title" data-i18n="how1_title">درخواستت رو بنویس</h3><p class="step-desc" data-i18n="how1_desc">بگو چه همراهی می‌خوای، کجا، چه روزی و ساعتی.</p></div>
+          <div class="step-card"><div class="step-num">۲</div><div class="step-icon">💌</div><h3 class="step-title" data-i18n="how2_title">پیشنهاد دریافت کن</h3><p class="step-desc" data-i18n="how2_desc">افراد علاقه‌مند پیشنهاد می‌دن. تو انتخاب می‌کنی.</p></div>
+          <div class="step-card"><div class="step-num">۳</div><div class="step-icon">🛡️</div><h3 class="step-title" data-i18n="how3_title">با امنیت کامل</h3><p class="step-desc" data-i18n="how3_desc">پروفایل تأییدشده، پرداخت امن و پشتیبانی ۲۴ ساعته.</p></div>
+          <div class="step-card"><div class="step-num">۴</div><div class="step-icon">💫</div><h3 class="step-title" data-i18n="how4_title">لذت ببر و درآمد بساز</h3><p class="step-desc" data-i18n="how4_desc">می‌تونی خودت هم همراه بشی و درآمد داشته باشی.</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- EXPLORE -->
+  <div class="page" id="page-explore">
+    <div class="container">
+      <div class="section-head" style="margin-top:24px;"><div><h2 class="section-title" data-i18n="explore_title">کاوش درخواست‌ها</h2><p class="section-sub" data-i18n="explore_sub">درخواستی که دوست داری رو پیدا کن</p></div></div>
+      <div class="flex items-center gap-3 flex-wrap" style="margin-bottom:20px;">
+        <div class="search-bar"><span class="ico">🔍</span><input type="text" id="searchInput" placeholder="جستجو..." data-i18n-ph="search_ph"></div>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="cards-grid" id="exploreCards"></div>
+    </div>
+  </div>
+
+  <!-- CREATE -->
+  <div class="page" id="page-create">
+    <div class="container container-narrow">
+      <div class="section-head" style="margin-top:24px;"><div><h2 class="section-title" data-i18n="create_title">درخواست همراهی جدید</h2><p class="section-sub" data-i18n="create_sub">هرچی دقیق‌تر بنویسی، پیشنهادهای بهتری می‌گیری</p></div></div>
+      <div class="form-card">
+        <form id="createForm">
+          <div class="form-group"><label class="form-label"><span data-i18n="f_title">عنوان درخواست</span> <span class="req">*</span></label><input class="form-input" id="f_title" required placeholder="مثلاً: همراهی برای اداره ثبت"></div>
+          <div class="form-group"><label class="form-label"><span data-i18n="f_cat">دسته‌بندی</span> <span class="req">*</span></label><select class="form-select" id="f_cat" required></select></div>
+          <div class="form-group"><label class="form-label"><span data-i18n="f_desc">توضیحات کامل</span> <span class="req">*</span></label><textarea class="form-textarea" id="f_desc" required placeholder="جزئیات برنامه، انتظارات و..."></textarea><div class="form-hint" data-i18n="f_desc_hint">💡 هرچی بیشتر توضیح بدی، همراه مناسب‌تری پیدا می‌کنی</div></div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label"><span data-i18n="f_date">تاریخ</span> <span class="req">*</span></label><input type="date" class="form-input" id="f_date" required></div>
+            <div class="form-group"><label class="form-label"><span data-i18n="f_time">ساعت</span> <span class="req">*</span></label><input type="time" class="form-input" id="f_time" required></div>
+          </div>
+          <div class="form-group"><label class="form-label"><span data-i18n="f_loc">مکان</span> <span class="req">*</span></label><input class="form-input" id="f_loc" required placeholder="آدرس دقیق یا نام مکان"></div>
+          <div class="form-group"><label class="form-label" data-i18n="f_price">مبلغ پیشنهادی (تومان)</label><input type="number" class="form-input" id="f_price" placeholder="۰" min="0"><div class="form-hint" data-i18n="f_price_hint">💚 خالی بگذارید یا صفر وارد کنید اگر رایگان است</div></div>
+          <div class="form-group"><label class="form-label" data-i18n="f_cond">شرایط خاص</label><textarea class="form-textarea" id="f_cond" placeholder="مثلاً: مسلط به زبان انگلیسی، دارای ماشین..." style="min-height:80px;"></textarea></div>
+          <div class="form-group"><label class="checkbox-group"><input type="checkbox" id="f_urgent"><span data-i18n="f_urgent">⚡ فوری است — سریع‌تر دیده می‌شه</span></label></div>
+          <button type="submit" class="btn btn-accent btn-lg w-full" style="margin-top:8px;"><span>🚀</span><span data-i18n="f_submit">ثبت درخواست</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="page" id="page-dashboard">
+    <div class="container">
+      <div class="profile-hero" style="margin-top:24px;">
+        <div class="profile-avatar-lg" id="dashAvatar">ک</div>
+        <div class="profile-info">
+          <div class="profile-name" id="dashName">کاربر مهمان</div>
+          <div class="profile-email" id="dashEmail">guest@hamrah.app</div>
+          <div class="profile-badge-row">
+            <span class="profile-badge">✅ تأیید شده</span>
+            <span class="profile-badge">⭐ همراه طلایی</span>
+            <span class="profile-badge">🛡️ پرداخت امن</span>
+          </div>
+        </div>
+        <div class="profile-stats-row">
+          <div class="pstat"><div class="pstat-num" id="dashReqCount">۰</div><div class="pstat-lbl" data-i18n="dash_requests">درخواست</div></div>
+          <div class="pstat"><div class="pstat-num" id="dashOfferCount">۰</div><div class="pstat-lbl" data-i18n="dash_offers">پیشنهاد</div></div>
+          <div class="pstat"><div class="pstat-num" id="dashRating">۵.۰</div><div class="pstat-lbl" data-i18n="dash_rating">امتیاز</div></div>
+        </div>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="my-requests" onclick="setTab('my-requests')"><span>📝</span><span data-i18n="tab_my_req">درخواست‌های من</span></button>
+        <button class="tab" data-tab="my-offers" onclick="setTab('my-offers')"><span>💌</span><span data-i18n="tab_my_off">پیشنهادهای من</span></button>
+        <button class="tab" data-tab="received" onclick="setTab('received')"><span>📬</span><span data-i18n="tab_received">دریافتی‌ها</span></button>
+        <button class="tab" data-tab="history" onclick="setTab('history')"><span>📅</span><span data-i18n="tab_history">تاریخچه</span></button>
+        <button class="tab" data-tab="settings" onclick="setTab('settings')"><span>⚙️</span><span data-i18n="tab_settings">تنظیمات</span></button>
+      </div>
+      <div class="tab-panel active" id="panel-my-requests">
+        <div class="flex justify-between items-center" style="margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+          <h3 style="font-family:var(--fd);font-size:18px;" data-i18n="dash_my_req_title">درخواست‌های من</h3>
+          <button class="btn btn-accent btn-sm" onclick="go('create')"><span>➕</span><span data-i18n="dash_new_req">درخواست جدید</span></button>
+        </div>
+        <div id="myReqList"></div>
+      </div>
+      <div class="tab-panel" id="panel-my-offers"><h3 style="font-family:var(--fd);font-size:18px;margin-bottom:16px;" data-i18n="dash_my_off_title">پیشنهادهای من</h3><div id="myOffList"></div></div>
+      <div class="tab-panel" id="panel-received"><h3 style="font-family:var(--fd);font-size:18px;margin-bottom:16px;" data-i18n="dash_received_title">پیشنهادهای دریافتی</h3><div id="receivedList"></div></div>
+      <div class="tab-panel" id="panel-history"><h3 style="font-family:var(--fd);font-size:18px;margin-bottom:16px;" data-i18n="dash_history_title">تاریخچه فعالیت‌ها</h3><div class="timeline" id="historyTimeline"></div></div>
+      <div class="tab-panel" id="panel-settings">
+        <div class="form-card" style="max-width:560px;">
+          <h3 style="font-family:var(--fd);font-size:18px;margin-bottom:20px;" data-i18n="settings_title">تنظیمات حساب</h3>
+          <div class="form-group"><label class="form-label" data-i18n="set_name">نام نمایشی</label><input class="form-input" id="set_name"></div>
+          <div class="form-group"><label class="form-label" data-i18n="set_email">ایمیل</label><input type="email" class="form-input" id="set_email"></div>
+          <div class="form-group"><label class="form-label" data-i18n="set_phone">موبایل</label><input class="form-input" id="set_phone"></div>
+          <div class="form-group"><label class="form-label" data-i18n="set_bio">درباره من</label><textarea class="form-textarea" id="set_bio" style="min-height:80px;"></textarea></div>
+          <button class="btn btn-accent w-full" onclick="saveSettings()" data-i18n="set_save">💾 ذخیره تغییرات</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT -->
+  <div class="page" id="page-chat">
+    <div class="container container-narrow">
+      <div class="section-head" style="margin-top:24px;"><div><h2 class="section-title" data-i18n="chat_title">پیام‌ها</h2><p class="section-sub" data-i18n="chat_sub">گفتگوی امن و مستقیم</p></div></div>
+      <div id="chatList" style="margin-bottom:20px;"></div>
+      <div class="chat-container hidden" id="chatContainer">
+        <div class="chat-header">
+          <div class="avatar online" id="chatAvatar">م</div>
+          <div class="chat-header-info">
+            <div class="name" id="chatName">کاربر</div>
+            <div class="status" data-i18n="chat_online">آنلاین</div>
+          </div>
+          <button class="btn btn-ghost btn-sm" style="margin-right:auto" onclick="closeChat()" data-i18n="close">بستن</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input-row">
+          <input type="text" id="chatInput" placeholder="پیام خود را بنویسید..." data-i18n-ph="msg_ph">
+          <button class="btn btn-accent" onclick="sendChat()">📤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="page" id="page-login">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <div class="auth-logo">🔑</div>
+        <h2 class="auth-title" data-i18n="login_title">خوش برگشتی 👋</h2>
+        <p class="auth-sub" data-i18n="login_sub">خوشحالیم که دوباره می‌بینیمت</p>
+        <form id="loginForm">
+          <div class="form-group"><label class="form-label" data-i18n="login_email">ایمیل</label><input type="email" class="form-input" id="loginEmail" required placeholder="email@example.com"></div>
+          <div class="form-group"><label class="form-label" data-i18n="login_pass">رمز عبور</label><input type="password" class="form-input" id="loginPass" required placeholder="••••••••"></div>
+          <button type="submit" class="btn btn-accent btn-lg w-full"><span>🔑</span><span data-i18n="login_btn">ورود به حساب</span></button>
+        </form>
+        <div class="auth-switch"><span data-i18n="login_no_acc">حساب نداری؟</span><button onclick="go('signup')" data-i18n="login_signup">ثبت‌نام کن</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNUP -->
+  <div class="page" id="page-signup">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <div class="auth-logo">✨</div>
+        <h2 class="auth-title" data-i18n="signup_title">به همراه خوش آمدی</h2>
+        <p class="auth-sub" data-i18n="signup_sub">چند لحظه وقت بذار تا تجربه‌ای عالی بسازیم</p>
+        <form id="signupForm">
+          <div class="form-group"><label class="form-label" data-i18n="signup_name">نام و نام خانوادگی</label><input class="form-input" id="su_name" required placeholder="مثلاً: علی رضایی"></div>
+          <div class="form-group"><label class="form-label" data-i18n="signup_email">ایمیل</label><input type="email" class="form-input" id="su_email" required placeholder="email@example.com"></div>
+          <div class="form-group"><label class="form-label" data-i18n="signup_phone">شماره موبایل</label><input type="tel" class="form-input" id="su_phone" placeholder="۰۹۱۲۳۴۵۶۷۸۹"></div>
+          <div class="form-group"><label class="form-label" data-i18n="signup_pass">رمز عبور</label><input type="password" class="form-input" id="su_pass" required placeholder="حداقل ۶ کاراکتر"></div>
+          <button type="submit" class="btn btn-accent btn-lg w-full"><span>🚀</span><span data-i18n="signup_btn">ساخت حساب</span></button>
+        </form>
+        <div class="auth-switch"><span data-i18n="signup_has">حساب داری؟</span><button onclick="go('login')" data-i18n="signup_login">وارد شو</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <button class="bottom-item active" data-page="home" onclick="go('home')"><span class="ico">🏠</span><span data-i18n="nav_home">خانه</span></button>
+    <button class="bottom-item" data-page="explore" onclick="go('explore')"><span class="ico">🔍</span><span data-i18n="nav_explore">کاوش</span></button>
+    <button class="bottom-item" data-page="create" onclick="go('create')"><span class="ico">✨</span><span data-i18n="nav_create">درخواست</span></button>
+    <button class="bottom-item" data-page="chat" onclick="go('chat')"><span class="ico">💬</span><span data-i18n="nav_chat">پیام‌ها</span></button>
+    <button class="bottom-item" data-page="dashboard" onclick="go('dashboard')"><span class="ico">📊</span><span data-i18n="nav_dashboard">داشبورد</span></button>
+  </div>
+</nav>
+
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<div class="toast" id="toast"><span>✅</span><span id="toastText">پیام</span></div>
+
+<script>
+/* ============================================================
+   STATE
+   ============================================================ */
+const S = {
+  page:'home', lang:'fa', theme:'dark', filter:'all', search:'',
+  tab:'my-requests', token:null, user:null, cats:[],
+  requests:[], myReq:[], myOff:[], received:[], notifications:[],
+  chatOther:null, ws:null, currentRequest:null
+};
+
+/* ============================================================
+   TRANSLATIONS
+   ============================================================ */
+const T = {
+  fa:{
+    logo:'همراه', logo_sub:'با هم، هر مسیر آسان‌تر',
+    nav_home:'خانه', nav_explore:'کاوش', nav_create:'درخواست جدید', nav_dashboard:'داشبورد', nav_chat:'پیام‌ها', nav_login:'ورود', nav_signup:'ثبت‌نام', nav_logout:'خروج',
+    hero_badge:'پلتفرم همراهی هوشمند و امن', hero_title:'با هم، هر مسیر آسان‌تر است',
+    hero_desc:'کسی رو پیدا کن که برای کارهای اداری، سینما، تئاتر، خرید و هر برنامه‌ای کنارت باشه. یا خودت پیشنهاد بده و هم درآمد داشته باش هم دوستای تازه پیدا کن.',
+    hero_cta1:'درخواست همراهی', hero_cta2:'گشتن درخواست‌ها',
+    stat_requests:'درخواست فعال', stat_users:'همراه همراه', stat_matches:'همراهی موفق', stat_cities:'شهر فعال',
+    cats_title:'دسته‌بندی‌های محبوب', cats_sub:'انتخاب کن چه نوع همراهی می‌خوای',
+    featured_title:'درخواست‌های ویژه', featured_sub:'تازه‌ترین و داغ‌ترین‌ها', view_all:'مشاهده همه ←',
+    quote_text:'«تنها رفتن سریع‌تره، با هم رفتن دورتره.»', quote_author:'— ضرب‌المثل آفریقایی',
+    how_title:'چطور کار می‌کند؟', how_sub:'فقط ۴ قدم ساده تا تجربه‌ای امن و لذت‌بخش',
+    how1_title:'درخواستت رو بنویس', how1_desc:'بگو چه همراهی می‌خوای، کجا، چه روزی و ساعتی.',
+    how2_title:'پیشنهاد دریافت کن', how2_desc:'افراد علاقه‌مند پیشنهاد می‌دن. تو انتخاب می‌کنی.',
+    how3_title:'با امنیت کامل', how3_desc:'پروفایل تأییدشده، پرداخت امن و پشتیبانی ۲۴ ساعته.',
+    how4_title:'لذت ببر و درآمد بساز', how4_desc:'می‌تونی خودت هم همراه بشی و درآمد داشته باشی.',
+    explore_title:'کاوش درخواست‌ها', explore_sub:'درخواستی که دوست داری رو پیدا کن', search_ph:'جستجو...',
+    create_title:'درخواست همراهی جدید', create_sub:'هرچی دقیق‌تر بنویسی، پیشنهادهای بهتری می‌گیری',
+    f_title:'عنوان درخواست', f_cat:'دسته‌بندی', f_select:'انتخاب کنید...',
+    f_desc:'توضیحات کامل', f_desc_hint:'💡 هرچی بیشتر توضیح بدی، همراه مناسب‌تری پیدا می‌کنی',
+    f_date:'تاریخ', f_time:'ساعت', f_loc:'مکان',
+    f_price:'مبلغ پیشنهادی (تومان)', f_price_hint:'💚 خالی بگذارید یا صفر وارد کنید اگر رایگان است',
+    f_cond:'شرایط خاص', f_urgent:'⚡ فوری است — سریع‌تر دیده می‌شه', f_submit:'ثبت درخواست',
+    dash_requests:'درخواست', dash_offers:'پیشنهاد', dash_rating:'امتیاز',
+    tab_my_req:'درخواست‌های من', tab_my_off:'پیشنهادهای من', tab_received:'دریافتی‌ها', tab_history:'تاریخچه', tab_settings:'تنظیمات',
+    dash_my_req_title:'درخواست‌های من', dash_new_req:'درخواست جدید', dash_my_off_title:'پیشنهادهای من',
+    dash_received_title:'پیشنهادهای دریافتی', dash_history_title:'تاریخچه فعالیت‌ها',
+    settings_title:'تنظیمات حساب', set_name:'نام نمایشی', set_email:'ایمیل', set_phone:'موبایل', set_bio:'درباره من', set_save:'💾 ذخیره تغییرات',
+    chat_title:'پیام‌ها', chat_sub:'گفتگوی امن و مستقیم', chat_online:'آنلاین', msg_ph:'پیام خود را بنویسید...', close:'بستن',
+    login_title:'خوش برگشتی 👋', login_sub:'خوشحالیم که دوباره می‌بینیمت',
+    login_email:'ایمیل', login_pass:'رمز عبور', login_btn:'ورود به حساب',
+    login_no_acc:'حساب نداری؟', login_signup:'ثبت‌نام کن',
+    signup_title:'به همراه خوش آمدی', signup_sub:'چند لحظه وقت بذار تا تجربه‌ای عالی بسازیم',
+    signup_name:'نام و نام خانوادگی', signup_email:'ایمیل', signup_phone:'شماره موبایل', signup_pass:'رمز عبور',
+    signup_btn:'ساخت حساب', signup_has:'حساب داری؟', signup_login:'وارد شو',
+    empty_req:'هنوز درخواستی ثبت نکرده‌اید', empty_req_d:'اولین درخواستت رو ثبت کن تا شروع کنیم',
+    empty_off:'هنوز پیشنهادی نداده‌اید', empty_off_d:'درخواست‌ها رو ببین و پیشنهاد بده',
+    empty_rec:'هنوز پیشنهادی دریافت نکرده‌اید', empty_rec_d:'به زودی پیشنهادها اینجا ظاهر می‌شن',
+    empty_chat:'گفتگویی وجود ندارد', empty_chat_d:'با یک کاربر گفتگو را شروع کن',
+    toast_login:'با موفقیت وارد شدید ✓', toast_signup:'ثبت‌نام با موفقیت انجام شد ✓',
+    toast_req:'درخواست شما ثبت شد ✓', toast_offer:'پیشنهاد شما ارسال شد ✓',
+    toast_settings:'تنظیمات ذخیره شد ✓', toast_select:'پیشنهاد انتخاب شد ✓',
+    toast_error:'خطا در ارتباط با سرور', toast_need_login:'ابتدا وارد شوید',
+    price_free:'رایگان', urgent:'فوری',
+    detail_title:'جزئیات درخواست', detail_requester:'درخواست‌دهنده',
+    detail_conditions:'شرایط', detail_send_offer:'ارسال پیشنهاد',
+    detail_offer_price:'مبلغ پیشنهادی شما', detail_offer_msg:'پیام شما',
+    detail_offer_submit:'ارسال پیشنهاد', cancel:'لغو', confirm:'تأیید',
+    chat_btn:'گفتگو', accept:'پذیرش', reject:'رد', delete:'حذف',
+    st_active:'فعال', st_pending:'در انتظار', st_matched:'تطبیق داده شده', st_rejected:'رد شده',
+    st_accepted:'پذیرفته شد', logged_in_as:'وارد شده به عنوان'
+  },
+  en:{
+    logo:'Hamrah', logo_sub:'Together, every path is easier',
+    nav_home:'Home', nav_explore:'Explore', nav_create:'New Request', nav_dashboard:'Dashboard', nav_chat:'Messages', nav_login:'Login', nav_signup:'Sign Up', nav_logout:'Logout',
+    hero_badge:'Smart & Safe Companion Platform', hero_title:'Together, every path is easier',
+    hero_desc:'Find someone to accompany you for administrative tasks, cinema, theater, shopping and more. Or offer yourself and earn income while making new friends.',
+    hero_cta1:'Request Companion', hero_cta2:'Browse Requests',
+    stat_requests:'Active Requests', stat_users:'Companions', stat_matches:'Successful Matches', stat_cities:'Active Cities',
+    cats_title:'Popular Categories', cats_sub:'Choose what kind of companionship you want',
+    featured_title:'Featured Requests', featured_sub:'Latest and hottest', view_all:'View All →',
+    quote_text:'"Alone we go faster, together we go further."', quote_author:'— African Proverb',
+    how_title:'How It Works', how_sub:'Just 4 simple steps to a safe & delightful experience',
+    how1_title:'Write your request', how1_desc:'Say what companionship you need, where, when.',
+    how2_title:'Receive offers', how2_desc:'Interested people send offers. You choose.',
+    how3_title:'Stay fully secure', how3_desc:'Verified profiles, secure payment, 24/7 support.',
+    how4_title:'Enjoy & earn', how4_desc:'You can also be a companion and earn income.',
+    explore_title:'Explore Requests', explore_sub:'Find the request you love', search_ph:'Search...',
+    create_title:'New Companion Request', create_sub:'The more precise, the better offers',
+    f_title:'Request Title', f_cat:'Category', f_select:'Select...',
+    f_desc:'Full Description', f_desc_hint:'💡 The more detail, the better your match',
+    f_date:'Date', f_time:'Time', f_loc:'Location',
+    f_price:'Proposed Price (Toman)', f_price_hint:'💚 Leave empty or zero if free',
+    f_cond:'Special Conditions', f_urgent:'⚡ Urgent — gets seen faster', f_submit:'Submit Request',
+    dash_requests:'Requests', dash_offers:'Offers', dash_rating:'Rating',
+    tab_my_req:'My Requests', tab_my_off:'My Offers', tab_received:'Received', tab_history:'History', tab_settings:'Settings',
+    dash_my_req_title:'My Requests', dash_new_req:'New Request', dash_my_off_title:'My Offers',
+    dash_received_title:'Received Offers', dash_history_title:'Activity History',
+    settings_title:'Account Settings', set_name:'Display Name', set_email:'Email', set_phone:'Phone', set_bio:'Bio', set_save:'💾 Save Changes',
+    chat_title:'Messages', chat_sub:'Secure and direct conversation', chat_online:'Online', msg_ph:'Type your message...', close:'Close',
+    login_title:'Welcome Back 👋', login_sub:'Great to see you again',
+    login_email:'Email', login_pass:'Password', login_btn:'Login',
+    login_no_acc:"Don't have an account?", login_signup:'Sign up',
+    signup_title:'Welcome to Hamrah', signup_sub:'A few seconds to craft an amazing experience',
+    signup_name:'Full Name', signup_email:'Email', signup_phone:'Phone', signup_pass:'Password',
+    signup_btn:'Create Account', signup_has:'Already have an account?', signup_login:'Log in',
+    empty_req:'No requests yet', empty_req_d:'Create your first request',
+    empty_off:'No offers yet', empty_off_d:'Browse requests and make an offer',
+    empty_rec:'No received offers yet', empty_rec_d:'Offers will appear here',
+    empty_chat:'No conversations', empty_chat_d:'Start a conversation with a user',
+    toast_login:'Logged in ✓', toast_signup:'Signed up ✓',
+    toast_req:'Request submitted ✓', toast_offer:'Offer sent ✓',
+    toast_settings:'Settings saved ✓', toast_select:'Offer selected ✓',
+    toast_error:'Connection error', toast_need_login:'Please login first',
+    price_free:'Free', urgent:'Urgent',
+    detail_title:'Request Details', detail_requester:'Requester',
+    detail_conditions:'Conditions', detail_send_offer:'Send Offer',
+    detail_offer_price:'Your Proposed Price', detail_offer_msg:'Your Message',
+    detail_offer_submit:'Send Offer', cancel:'Cancel', confirm:'Confirm',
+    chat_btn:'Chat', accept:'Accept', reject:'Reject', delete:'Delete',
+    st_active:'Active', st_pending:'Pending', st_matched:'Matched', st_rejected:'Rejected',
+    st_accepted:'Accepted', logged_in_as:'Logged in as'
+  }
+};
+
+function t(k){ return (T[S.lang] && T[S.lang][k]) || T.fa[k] || k; }
+
+/* ============================================================
+   API HELPER
+   ============================================================ */
+async function api(path, options={}) {
+  const headers = { 'Content-Type':'application/json', ...(options.headers||{}) };
+  if (S.token) headers['Authorization'] = 'Bearer ' + S.token;
+  const res = await fetch(window.API_BASE + path, { ...options, headers });
+  if (res.status === 401 && S.token) { logout(false); }
+  let data = null;
+  try { data = await res.json(); } catch(e){}
+  if (!res.ok) {
+    const msg = (data && (data.detail || data.message)) || 'Error ' + res.status;
+    throw new Error(msg);
+  }
+  return data;
+}
+
+/* ============================================================
+   AUTH
+   ============================================================ */
+function saveAuth(token, user) {
+  S.token = token; S.user = user;
+  try { localStorage.setItem('hamrah-token', token); localStorage.setItem('hamrah-user', JSON.stringify(user)); } catch(e){}
+  updateAuthUI();
+}
+
+function logout(showMsg=true) {
+  S.token = null; S.user = null;
+  try { localStorage.removeItem('hamrah-token'); localStorage.removeItem('hamrah-user'); } catch(e){}
+  updateAuthUI();
+  if (showMsg) go('home');
+}
+
+function updateAuthUI() {
+  const logged = !!S.token;
+  document.getElementById('loginBtn').classList.toggle('hidden', logged);
+  document.getElementById('signupBtn').classList.toggle('hidden', logged);
+  document.getElementById('loginBtnM').classList.toggle('hidden', logged);
+  document.getElementById('signupBtnM').classList.toggle('hidden', logged);
+  document.getElementById('logoutBtnM').classList.toggle('hidden', !logged);
+  document.getElementById('userMenu').classList.toggle('hidden', !logged);
+
+  if (logged && S.user) {
+    document.getElementById('headerAvatar').textContent = (S.user.name||'U')[0].toUpperCase();
+    document.getElementById('dashName').textContent = S.user.name || '-';
+    document.getElementById('dashEmail').textContent = S.user.email || '-';
+    document.getElementById('dashAvatar').textContent = (S.user.name||'U')[0].toUpperCase();
+    document.getElementById('set_name').value = S.user.name || '';
+    document.getElementById('set_email').value = S.user.email || '';
+    document.getElementById('set_phone').value = S.user.phone || '';
+    document.getElementById('set_bio').value = S.user.bio || '';
+  }
+}
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function catLabel(id) {
+  const c = S.cats.find(c => c.id === id);
+  return c ? (S.lang === 'fa' ? c.fa : c.en) : id;
+}
+function catEmoji(id) {
+  const c = S.cats.find(c => c.id === id);
+  return c ? c.emoji : '📌';
+}
+function fmtPrice(p) {
+  if (!p || p === 0) return t('price_free');
+  return Number(p).toLocaleString(S.lang === 'fa' ? 'fa-IR' : 'en-US') + (S.lang === 'fa' ? ' تومان' : ' T');
+}
+
+function reqCard(r) {
+  const priceCls = (!r.price || r.price === 0) ? 'free' : '';
+  const user = r.user || { name:'?', avatar:'?' };
+  return `<div class="req-card" onclick="openDetail(${r.id})">
+    ${r.urgent ? `<div class="req-badge urgent">⚡ ${t('urgent')}</div>` : ''}
+    <div class="req-badge cat">${catLabel(r.category)}</div>
+    <div class="req-cover">${catEmoji(r.category)}</div>
+    <div class="req-body">
+      <h3 class="req-title">${r.title}</h3>
+      <div class="req-meta">
+        <span class="meta-item">📅 ${r.date}</span>
+        <span class="meta-item">🕐 ${r.time}</span>
+        <span class="meta-item">📍 ${r.location}</span>
+      </div>
+      <p class="req-desc">${r.description}</p>
+      <div class="req-foot">
+        <div class="req-price ${priceCls}">${fmtPrice(r.price)}</div>
+        <div class="req-user"><div class="avatar">${user.avatar||'?'}</div><span>${user.name||'?'}</span></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderFeatured() {
+  document.getElementById('featuredCards').innerHTML =
+    S.requests.slice(0,4).map(reqCard).join('') ||
+    `<div class="empty" style="grid-column:1/-1"><div class="empty-ico">📭</div><div class="empty-title">${S.lang==='fa'?'هنوز درخواستی نیست':'No requests yet'}</div></div>`;
+}
+
+function renderExplore() {
+  const c = document.getElementById('exploreCards');
+  if (!S.requests.length) {
+    c.innerHTML = `<div class="empty" style="grid-column:1/-1"><div class="empty-ico">🔍</div><div class="empty-title">${S.lang==='fa'?'درخواستی پیدا نشد':'No requests found'}</div></div>`;
+    return;
+  }
+  c.innerHTML = S.requests.map(reqCard).join('');
+}
+
+function renderCats() {
+  document.getElementById('catsGrid').innerHTML = S.cats.map(c => `
+    <div class="cat-tile" onclick="filterByCat('${c.id}')">
+      <span class="cat-emoji">${c.emoji}</span>
+      <div class="cat-name">${S.lang==='fa' ? c.fa : c.en}</div>
+    </div>`).join('');
+}
+
+function renderFilters() {
+  const all = [{id:'all', fa:'همه', en:'All'}, ...S.cats];
+  document.getElementById('filters').innerHTML = all.map(c => `
+    <button class="filter-chip ${S.filter===c.id?'active':''}" onclick="setFilter('${c.id}')">
+      ${S.lang==='fa' ? c.fa : c.en}
+    </button>`).join('');
+}
+
+function renderStats(stats) {
+  const g = document.getElementById('homeStats');
+  const items = [
+    {icon:'🤝', num: stats.requests, key:'stat_requests'},
+    {icon:'👥', num: stats.users, key:'stat_users'},
+    {icon:'💚', num: stats.matches, key:'stat_matches'},
+    {icon:'🏙️', num: stats.cities, key:'stat_cities'},
+  ];
+  g.innerHTML = items.map(i => `
+    <div class="stat-card">
+      <span class="stat-icon">${i.icon}</span>
+      <div class="stat-num">${Number(i.num).toLocaleString(S.lang==='fa'?'fa-IR':'en-US')}</div>
+      <div class="stat-lbl">${t(i.key)}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   LOADERS
+   ============================================================ */
+async function loadRequests() {
+  const params = new URLSearchParams();
+  if (S.filter && S.filter !== 'all') params.set('category', S.filter);
+  if (S.search) params.set('search', S.search);
+  try {
+    S.requests = await api('/api/requests?' + params.toString());
+    renderFeatured();
+    renderExplore();
+  } catch(e) { console.error(e); }
+}
+
+async function loadStats() {
+  try {
+    const s = await api('/api/stats');
+    renderStats(s);
+  } catch(e){}
+}
+
+async function loadCats() {
+  try {
+    S.cats = await api('/api/categories');
+    renderCats();
+    renderFilters();
+    document.getElementById('f_cat').innerHTML =
+      `<option value="">${t('f_select')}</option>` +
+      S.cats.map(c => `<option value="${c.id}">${S.lang==='fa'?c.fa:c.en}</option>`).join('');
+  } catch(e){}
+}
+
+async function loadDashboard() {
+  if (!S.token) {
+    document.getElementById('myReqList').innerHTML = emptyBox('🔒', t('toast_need_login'));
+    document.getElementById('myOffList').innerHTML = '';
+    document.getElementById('receivedList').innerHTML = '';
+    document.getElementById('historyTimeline').innerHTML = '';
+    return;
+  }
+  try {
+    const [myReq, myOff, received, activities] = await Promise.all([
+      api('/api/my/requests'),
+      api('/api/my/offers'),
+      api('/api/my/received-offers'),
+      api('/api/my/activities')
+    ]);
+    S.myReq = myReq; S.myOff = myOff; S.received = received;
+
+    document.getElementById('dashReqCount').textContent = myReq.length;
+    document.getElementById('dashOfferCount').textContent = myOff.length;
+
+    document.getElementById('myReqList').innerHTML = myReq.length ?
+      myReq.map(r => `
+        <div class="list-item">
+          <div class="list-ico">${catEmoji(r.category)}</div>
+          <div class="list-content">
+            <div class="list-title">${r.title}</div>
+            <div class="list-meta">
+              <span class="meta-item">📅 ${r.date}</span>
+              <span class="meta-item">🕐 ${r.time}</span>
+              <span class="meta-item">📍 ${r.location}</span>
+              <span class="meta-item">💰 ${fmtPrice(r.price)}</span>
+              <span class="meta-item">💌 ${r.offers_count} پیشنهاد</span>
+            </div>
+          </div>
+          <div class="list-actions">
+            <span class="status-pill st-${r.status}">${t('st_'+r.status)}</span>
+            <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openDetail(${r.id})">${S.lang==='fa'?'مشاهده':'View'}</button>
+            <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();deleteRequest(${r.id})">🗑</button>
+          </div>
+        </div>`).join('') : emptyBox('📝', t('empty_req'), t('empty_req_d'));
+
+    document.getElementById('myOffList').innerHTML = myOff.length ?
+      myOff.map(o => `
+        <div class="list-item">
+          <div class="list-ico">${catEmoji(o.category)}</div>
+          <div class="list-content">
+            <div class="list-title">${o.request_title}</div>
+            <div class="list-meta">
+              <span class="meta-item">📅 ${o.date}</span>
+              <span class="meta-item">🕐 ${o.time}</span>
+              <span class="meta-item">💰 ${fmtPrice(o.price)}</span>
+            </div>
+          </div>
+          <span class="status-pill st-${o.status}">${t('st_'+o.status)}</span>
+        </div>`).join('') : emptyBox('💌', t('empty_off'), t('empty_off_d'));
+
+    document.getElementById('receivedList').innerHTML = received.length ?
+      received.map(o => `
+        <div class="list-item">
+          <div class="avatar" style="width:52px;height:52px;font-size:18px;">${o.offerer_avatar||'?'}</div>
+          <div class="list-content">
+            <div class="list-title">${o.offerer_name} — ${o.request_title}</div>
+            <div class="list-meta">
+              <span class="meta-item">💰 ${fmtPrice(o.price)}</span>
+              <span class="meta-item">📝 ${o.message || '-'}</span>
+            </div>
+          </div>
+          <div class="list-actions">
+            ${o.status === 'pending' ? `
+              <button class="btn btn-accent btn-sm" onclick="event.stopPropagation();acceptOffer(${o.id})">${t('accept')}</button>
+              <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();rejectOffer(${o.id})">${t('reject')}</button>
+            ` : `<span class="status-pill st-${o.status}">${t('st_'+o.status)}</span>`}
+            <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();startChat(${o.user_id},'${o.offerer_name}','${o.offerer_avatar||'?'}')">💬</button>
+          </div>
+        </div>`).join('') : emptyBox('📬', t('empty_rec'), t('empty_rec_d'));
+
+    // History
+    document.getElementById('historyTimeline').innerHTML = activities.length ?
+      activities.map((a,i) => `
+        <div class="tl-item">
+          <div class="tl-dot ${i===0?'active':'done'}"></div>
+          <div class="tl-time">${formatDate(a.created_at)}</div>
+          <div class="tl-title">${activityLabel(a.action)}</div>
+          <div class="tl-desc">${a.meta && a.meta.request_id ? '#'+a.meta.request_id : ''}</div>
+        </div>`).join('') : emptyBox('📅', S.lang==='fa'?'فعالیتی ثبت نشده':'No activity');
+  } catch(e) { console.error(e); }
+}
+
+function emptyBox(ico, title, desc='') {
+  return `<div class="empty"><div class="empty-ico">${ico}</div><div class="empty-title">${title}</div><div class="empty-desc">${desc}</div></div>`;
+}
+
+function activityLabel(a) {
+  const map = {
+    fa: {signup:'ثبت‌نام', login:'ورود', create_request:'ایجاد درخواست', delete_request:'حذف درخواست', create_offer:'ارسال پیشنهاد', accept_offer:'پذیرش پیشنهاد'},
+    en: {signup:'Signup', login:'Login', create_request:'Request created', delete_request:'Request deleted', create_offer:'Offer sent', accept_offer:'Offer accepted'}
+  };
+  return (map[S.lang]||map.fa)[a] || a;
+}
+
+function formatDate(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleString(S.lang==='fa'?'fa-IR':'en-US', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+  } catch(e) { return iso; }
+}
+
+/* ============================================================
+   INTERACTIONS
+   ============================================================ */
+function setFilter(f) {
+  S.filter = f;
+  renderFilters();
+  loadRequests();
+}
+
+function filterByCat(cat) {
+  S.filter = cat;
+  go('explore');
+  setFilter(cat);
+}
+
+async function deleteRequest(id) {
+  if (!confirm(S.lang==='fa'?'حذف شود؟':'Delete?')) return;
+  try {
+    await api('/api/requests/'+id, {method:'DELETE'});
+    showToast(S.lang==='fa'?'حذف شد ✓':'Deleted ✓');
+    loadDashboard();
+    loadRequests();
+  } catch(e) { showToast(e.message); }
+}
+
+async function acceptOffer(id) {
+  try {
+    await api('/api/offers/'+id+'/accept', {method:'POST'});
+    showToast(t('toast_select'));
+    loadDashboard();
+  } catch(e) { showToast(e.message); }
+}
+
+async function rejectOffer(id) {
+  try {
+    await api('/api/offers/'+id+'/reject', {method:'POST'});
+    showToast(S.lang==='fa'?'رد شد':'Rejected');
+    loadDashboard();
+  } catch(e) { showToast(e.message); }
+}
+
+async function openDetail(id) {
+  try {
+    const r = await api('/api/requests/'+id);
+    S.currentRequest = r;
+    const price = r.price === 0 ? t('price_free') : fmtPrice(r.price);
+    const isOwner = S.user && r.user && r.user.id === S.user.id;
+
+    const offersHtml = isOwner && r.offers && r.offers.length ? `
+      <div style="margin-top:22px;padding-top:20px;border-top:1px solid var(--border);">
+        <h4 style="font-family:var(--fd);font-size:15px;margin-bottom:12px;">📬 ${S.lang==='fa'?'پیشنهادها':'Offers'} (${r.offers.length})</h4>
+        ${r.offers.map(o => `
+          <div class="list-item" style="padding:12px;">
+            <div class="avatar">${o.user_avatar||'?'}</div>
+            <div class="list-content">
+              <div class="list-title" style="font-size:14px;">${o.user_name}</div>
+              <div class="list-meta"><span class="meta-item">💰 ${fmtPrice(o.price)}</span>${o.message?`<span class="meta-item">📝 ${o.message}</span>`:''}</div>
+            </div>
+            <div class="list-actions">
+              ${o.status === 'pending' && r.status === 'active' ? `
+                <button class="btn btn-accent btn-sm" onclick="event.stopPropagation();acceptOffer(${o.id});closeModal()">${t('accept')}</button>
+              ` : `<span class="status-pill st-${o.status}">${t('st_'+o.status)}</span>`}
+            </div>
+          </div>`).join('')}
+      </div>` : '';
+
+    const offerForm = (!isOwner && S.token && !r.user_offered && r.status === 'active') ? `
+      <div style="margin-top:22px;padding-top:20px;border-top:1px solid var(--border);">
+        <h4 style="font-family:var(--fd);font-size:15px;margin-bottom:12px;">💌 ${t('detail_send_offer')}</h4>
+        <div class="form-group"><label class="form-label">${t('detail_offer_price')}</label><input type="number" class="form-input" id="offPrice" placeholder="500000" min="0"></div>
+        <div class="form-group"><label class="form-label">${t('detail_offer_msg')}</label><textarea class="form-textarea" id="offMsg" style="min-height:80px;"></textarea></div>
+      </div>` : '';
+
+    const html = `
+      <div class="modal-head"><div class="modal-title">${t('detail_title')}</div><button class="modal-close" onclick="closeModal()">✕</button></div>
+      <div class="modal-body">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+          <div class="list-ico" style="width:60px;height:60px;font-size:28px;">${catEmoji(r.category)}</div>
+          <div>
+            <h3 style="font-family:var(--fd);font-size:18px;line-height:1.4;">${r.title}</h3>
+            <span class="status-pill st-${r.status}" style="margin-top:6px;">${t('st_'+r.status)}</span>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-box"><div class="lbl">📅 ${S.lang==='fa'?'تاریخ و ساعت':'Date & Time'}</div><div class="val">${r.date} • ${r.time}</div></div>
+          <div class="info-box"><div class="lbl">📍 ${S.lang==='fa'?'مکان':'Location'}</div><div class="val">${r.location}</div></div>
+          <div class="info-box"><div class="lbl">💰 ${S.lang==='fa'?'مبلغ':'Price'}</div><div class="val" style="color:var(--accent);">${price}</div></div>
+          <div class="info-box"><div class="lbl">${S.lang==='fa'?'دسته':'Category'}</div><div class="val">${catLabel(r.category)}</div></div>
+        </div>
+        <div style="margin-bottom:16px;">
+          <div style="font-size:12px;color:var(--muted);font-weight:700;margin-bottom:8px;">${S.lang==='fa'?'توضیحات':'Description'}</div>
+          <p style="line-height:1.85;font-size:14px;">${r.description}</p>
+        </div>
+        ${r.conditions ? `<div style="margin-bottom:16px;"><div style="font-size:12px;color:var(--muted);font-weight:700;margin-bottom:8px;">${t('detail_conditions')}</div><p style="line-height:1.85;font-size:14px;">${r.conditions}</p></div>` : ''}
+        ${r.user ? `<div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--elev);border-radius:var(--r-md);border:1px solid var(--border);">
+          <div class="avatar online" style="width:46px;height:46px;font-size:17px;">${r.user.avatar}</div>
+          <div><div style="font-weight:700;font-size:14px;">${r.user.name}</div><div style="font-size:12px;color:var(--text2);">${t('detail_requester')}</div></div>
+          ${!isOwner && S.token ? `<button class="btn btn-ghost btn-sm" style="margin-right:auto" onclick="startChat(${r.user.id},'${r.user.name}','${r.user.avatar}');closeModal()">💬 ${t('chat_btn')}</button>` : ''}
+        </div>` : ''}
+        ${offersHtml}
+        ${offerForm}
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost" onclick="closeModal()">${t('cancel')}</button>
+        ${offerForm ? `<button class="btn btn-accent" onclick="submitOffer(${r.id})">💌 ${t('detail_offer_submit')}</button>` : ''}
+      </div>`;
+    openModal(html);
+  } catch(e) { showToast(e.message); }
+}
+
+async function submitOffer(reqId) {
+  if (!S.token) { showToast(t('toast_need_login')); return; }
+  const price = parseInt(document.getElementById('offPrice').value) || 0;
+  const msg = document.getElementById('offMsg').value;
+  try {
+    await api('/api/requests/'+reqId+'/offers', {
+      method:'POST', body: JSON.stringify({price, message: msg})
+    });
+    closeModal();
+    showToast(t('toast_offer'));
+    loadDashboard();
+    loadRequests();
+  } catch(e) { showToast(e.message); }
+}
+
+function openModal(html) {
+  document.getElementById('modalContent').innerHTML = html;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ============================================================
+   CHAT
+   ============================================================ */
+async function loadConversations() {
+  if (!S.token) {
+    document.getElementById('chatList').innerHTML = emptyBox('🔒', t('toast_need_login'));
+    return;
+  }
+  try {
+    const convs = await api('/api/conversations');
+    if (!convs.length) {
+      document.getElementById('chatList').innerHTML = emptyBox('💬', t('empty_chat'), t('empty_chat_d'));
+      return;
+    }
+    document.getElementById('chatList').innerHTML = convs.map(c => `
+      <div class="list-item" onclick="startChat(${c.other.id},'${c.other.name}','${c.other.avatar||'?'}')">
+        <div class="avatar online" style="width:52px;height:52px;font-size:18px;">${c.other.avatar||'?'}</div>
+        <div class="list-content">
+          <div class="list-title">${c.other.name}</div>
+          <div class="list-meta"><span class="meta-item">${c.last_message ? c.last_message.body.slice(0,50) : ''}</span></div>
+        </div>
+        ${c.unread ? `<span class="status-pill st-active" style="background:var(--rose);color:#fff;">${c.unread}</span>` : ''}
+      </div>`).join('');
+  } catch(e){}
+}
+
+async function startChat(userId, name, avatar) {
+  if (!S.token) { showToast(t('toast_need_login')); return; }
+  S.chatOther = { id: userId, name, avatar };
+  document.getElementById('chatList').classList.add('hidden');
+  document.getElementById('chatContainer').classList.remove('hidden');
+  document.getElementById('chatName').textContent = name;
+  document.getElementById('chatAvatar').textContent = avatar;
+  try {
+    const msgs = await api('/api/messages/' + userId);
+    renderMessages(msgs);
+    connectWS(userId);
+  } catch(e){}
+}
+
+function renderMessages(msgs) {
+  const box = document.getElementById('chatMessages');
+  box.innerHTML = msgs.map(m => {
+    const mine = S.user && m.sender_id === S.user.id;
+    return `<div class="chat-msg ${mine?'sent':'received'}">${m.body}<span class="time">${formatDate(m.created_at)}</span></div>`;
+  }).join('');
+  box.scrollTop = box.scrollHeight;
+}
+
+async function sendChat() {
+  const inp = document.getElementById('chatInput');
+  const body = inp.value.trim();
+  if (!body || !S.chatOther) return;
+  inp.value = '';
+  // Optimistic append
+  const box = document.getElementById('chatMessages');
+  const el = document.createElement('div');
+  el.className = 'chat-msg sent';
+  el.innerHTML = `${body}<span class="time">${S.lang==='fa'?'حالا':'now'}</span>`;
+  box.appendChild(el); box.scrollTop = box.scrollHeight;
+
+  try {
+    if (S.ws && S.ws.readyState === 1) {
+      S.ws.send(JSON.stringify({ receiver_id: S.chatOther.id, body }));
+    } else {
+      await api('/api/messages', {method:'POST', body: JSON.stringify({receiver_id:S.chatOther.id, body})});
+    }
+  } catch(e) { showToast(e.message); }
+}
+
+function connectWS(otherId) {
+  if (S.ws) { try { S.ws.close(); } catch(e){} }
+  try {
+    const proto = location.protocol === 'https:' ? 'wss' : 'ws';
+    const url = `${proto}://${location.hostname}:8000/ws/chat/${S.user.id}?token=${encodeURIComponent(S.token)}`;
+    S.ws = new WebSocket(url);
+    S.ws.onmessage = (ev) => {
+      try {
+        const d = JSON.parse(ev.data);
+        if (d.type === 'message' && d.data && d.data.sender_id === S.chatOther?.id) {
+          const box = document.getElementById('chatMessages');
+          const el = document.createElement('div');
+          el.className = 'chat-msg received';
+          el.innerHTML = `${d.data.body}<span class="time">${S.lang==='fa'?'حالا':'now'}</span>`;
+          box.appendChild(el); box.scrollTop = box.scrollHeight;
+        }
+      } catch(e){}
+    };
+  } catch(e){}
+}
+
+function closeChat() {
+  S.chatOther = null;
+  if (S.ws) { try { S.ws.close(); } catch(e){} S.ws = null; }
+  document.getElementById('chatContainer').classList.add('hidden');
+  document.getElementById('chatList').classList.remove('hidden');
+  loadConversations();
+}
+
+/* ============================================================
+   FORM: create request
+   ============================================================ */
+document.getElementById('createForm')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!S.token) { showToast(t('toast_need_login')); go('login'); return; }
+  const data = {
+    title: document.getElementById('f_title').value,
+    category: document.getElementById('f_cat').value,
+    description: document.getElementById('f_desc').value,
+    date: document.getElementById('f_date').value,
+    time: document.getElementById('f_time').value,
+    location: document.getElementById('f_loc').value,
+    price: parseInt(document.getElementById('f_price').value) || 0,
+    conditions: document.getElementById('f_cond').value,
+    urgent: document.getElementById('f_urgent').checked
+  };
+  try {
+    await api('/api/requests', {method:'POST', body: JSON.stringify(data)});
+    showToast(t('toast_req'));
+    e.target.reset();
+    loadRequests();
+    loadStats();
+    go('explore');
+  } catch(err) { showToast(err.message); }
+});
+
+/* ============================================================
+   AUTH FORMS
+   ============================================================ */
+document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPass').value;
+  try {
+    const res = await api('/api/auth/login', {method:'POST', body: JSON.stringify({email, password})});
+    saveAuth(res.token, res.user);
+    showToast(t('toast_login'));
+    go('dashboard');
+    loadDashboard();
+  } catch(err) { showToast(err.message); }
+});
+
+document.getElementById('signupForm')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = {
+    name: document.getElementById('su_name').value,
+    email: document.getElementById('su_email').value,
+    phone: document.getElementById('su_phone').value,
+    password: document.getElementById('su_pass').value
+  };
+  try {
+    const res = await api('/api/auth/signup', {method:'POST', body: JSON.stringify(data)});
+    saveAuth(res.token, res.user);
+    showToast(t('toast_signup'));
+    go('dashboard');
+    loadDashboard();
+  } catch(err) { showToast(err.message); }
+});
+
+/* ============================================================
+   SETTINGS SAVE
+   ============================================================ */
+async function saveSettings() {
+  if (!S.token) return;
+  const data = {
+    name: document.getElementById('set_name').value,
+    bio: document.getElementById('set_bio').value,
+    phone: document.getElementById('set_phone').value
+  };
+  try {
+    await api('/api/auth/me', {method:'PATCH', body: JSON.stringify(data)});
+    S.user = { ...S.user, ...data };
+    updateAuthUI();
+    showToast(t('toast_settings'));
+  } catch(e) { showToast(e.message); }
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+function go(page) {
+  S.page = page;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-'+page)?.classList.add('active');
+  document.querySelectorAll('.nav-btn[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === page));
+  document.querySelectorAll('.bottom-item[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === page));
+  document.getElementById('mobileMenu').classList.remove('open');
+  window.scrollTo({ top:0, behavior:'smooth' });
+
+  if (page === 'home') { loadRequests(); loadStats(); }
+  if (page === 'explore') loadRequests();
+  if (page === 'dashboard') loadDashboard();
+  if (page === 'chat') loadConversations();
+}
+
+function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+function setTab(tab) {
+  S.tab = tab;
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-'+tab));
+}
+
+/* ============================================================
+   THEME & LANG
+   ============================================================ */
+function setTheme(theme) {
+  S.theme = theme;
+  document.body.className = 'theme-' + theme;
+  document.querySelectorAll('.theme-dot').forEach(d => d.classList.toggle('active', d.dataset.theme === theme));
+  try { localStorage.setItem('hamrah-theme', theme); } catch(e){}
+}
+
+function setLang(lang) {
+  S.lang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (T[lang][k]) el.textContent = T[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.dataset.i18nPh;
+    if (T[lang][k]) el.placeholder = T[lang][k];
+  });
+  renderCats(); renderFilters(); renderFeatured(); renderExplore();
+  loadStats();
+  if (S.token) loadDashboard();
+  try { localStorage.setItem('hamrah-lang', lang); } catch(e){}
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+let toastTimer;
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  document.getElementById('toastText').textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3200);
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+async function init() {
+  try {
+    const th = localStorage.getItem('hamrah-theme'); if (th) setTheme(th);
+    const lg = localStorage.getItem('hamrah-lang'); if (lg) setLang(lg);
+    const tok = localStorage.getItem('hamrah-token');
+    const usr = localStorage.getItem('hamrah-user');
+    if (tok && usr) {
+      S.token = tok;
+      S.user = JSON.parse(usr);
+      try {
+        const me = await api('/api/auth/me');
+        S.user = me;
+        try { localStorage.setItem('hamrah-user', JSON.stringify(me)); } catch(e){}
+      } catch(e) { S.token = null; S.user = null; }
+    }
+  } catch(e){}
+
+  updateAuthUI();
+
+  // Default date today
+  const dt = document.getElementById('f_date');
+  if (dt) dt.value = new Date().toISOString().split('T')[0];
+
+  // Setup
+  document.querySelectorAll('.nav-btn[data-page]').forEach(b => b.addEventListener('click', () => go(b.dataset.page)));
+  document.querySelectorAll('.bottom-item[data-page]').forEach(b => b.addEventListener('click', () => go(b.dataset.page)));
+  document.getElementById('searchInput')?.addEventListener('input', (e) => {
+    S.search = e.target.value;
+    clearTimeout(window._sT);
+    window._sT = setTimeout(loadRequests, 350);
+  });
+  document.getElementById('chatInput')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendChat(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.mobile-menu-btn');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) menu.classList.remove('open');
+  });
+
+  // Load
+  await loadCats();
+  await loadRequests();
+  await loadStats();
+  if (S.token) loadDashboard();
+
+  console.log('🤝 Hamrah ready');
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
